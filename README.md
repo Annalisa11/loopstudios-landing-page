@@ -10,6 +10,7 @@ This is a solution to the [Loopstudios landing page challenge on Frontend Mentor
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+- [How to run](#how-to-run)
 - [Author](#author)
 
 ## Overview
@@ -71,6 +72,16 @@ $breakpoints: (
   font-family: var(--font-alata);
   font-weight: var(--font-weight-alata);
 }
+```
+## How to run
+
+> Prerequisites:
+> - Node.js ```npm init```
+> - Sass ```npm i sass```
+
+Type following command into the terminal to start the conversion of SCSS into CSS:   
+```batch
+sass --watch scss:css
 ```
 
 ## Author
