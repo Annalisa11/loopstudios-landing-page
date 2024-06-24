@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @extend %font-josefin;
+}
+
+h1,
+h2 {
+  font-weight: inherit;
+  margin: 0;
+}
+
+%font-atlanta {
+  font-family: var(--font-alata);
+  font-weight: var(--font-weight-alata);
+}
+
+%font-josefin {
+  font-family: var(--font-josefin);
+  font-weight: var(--font-weight-josefin-sans);
+}
+
+.deep-earth {
+  @include bg-img('image-deep-earth');
+}
+.night-arcade {
+  @include bg-img('image-night-arcade');
+}
+.soccer-team-vr {
+  @include bg-img('image-soccer-team');
+}
+.the-grid {
+  @include bg-img('image-grid');
+}
+.from-up-above-vr {
+  @include bg-img('image-from-above');
+}
+.pocket-borealis {
+  @include bg-img('image-pocket-borealis');
+}
+.make-it-fisheye {
+  @include bg-img('image-fisheye');
+}
+.the-curiosity {
+  @include bg-img('image-curiosity');
+}
+
+.deep-earth,
+.night-arcade,
+.soccer-team-vr,
+.the-grid,
+.from-up-above-vr,
+.pocket-borealis,
+.make-it-fisheye,
+.the-curiosity {
+  width: 100%;
+  height: 100%;
+}

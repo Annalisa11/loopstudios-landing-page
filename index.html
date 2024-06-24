@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <link rel="stylesheet" href="css/index.css" />
     <link
       rel="icon"
       type="image/png"
@@ -15,28 +15,30 @@
     <title>Frontend Mentor | Loopstudios landing page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <header>
-      <div class="header__company-title">loopstudios</div>
-      <nav>
-        <ul>
-          <li class="nav__menu-item">About</li>
-          <li class="nav__menu-item">Careers</li>
-          <li class="nav__menu-item">Events</li>
-          <li class="nav__menu-item">Products</li>
-          <li class="nav__menu-item">Support</li>
-        </ul>
-      </nav>
-      <div class="header__slogan">
-        <h1>Immersive experiences that deliver</h1>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__nav-container">
+          <div class="header__company-title">loopstudios</div>
+          <nav>
+            <ul>
+              <li class="nav__menu-item">About</li>
+              <li class="nav__menu-item">Careers</li>
+              <li class="nav__menu-item">Events</li>
+              <li class="nav__menu-item">Products</li>
+              <li class="nav__menu-item">Support</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__slogan">
+          <h1>
+            Immersive <br />
+            experiences <br />
+            that deliver
+          </h1>
+        </div>
       </div>
     </header>
     <main>
@@ -58,57 +60,68 @@
           <h2>Our creations</h2>
           <button>See all</button>
         </div>
-        <div class="gallery__content">
-          <div class="gallery__card">
-            <div class="gallery__card-title">text</div>
-          </div>
-        </div>
+        <div id="galleryContent" class="gallery__content"></div>
       </section>
     </main>
-    <footer>
-      <div class="footer-nav">
-        <div class="footer-nav__title">loopstudios</div>
-        <div class="footer-nav__list">
-          <li class="nav__menu-item">About</li>
-          <li class="nav__menu-item">Careers</li>
-          <li class="nav__menu-item">Events</li>
-          <li class="nav__menu-item">Products</li>
-          <li class="nav__menu-item">Support</li>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer-nav">
+          <div class="footer-nav__title">loopstudios</div>
+          <div class="footer-nav__list">
+            <ul>
+              <li class="nav__menu-item">About</li>
+              <li class="nav__menu-item">Careers</li>
+              <li class="nav__menu-item">Events</li>
+              <li class="nav__menu-item">Products</li>
+              <li class="nav__menu-item">Support</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="footer-links">
-        <div class="footer-links__social"></div>
-        <div class="footer-links__copyright">
-          @ 2021 Loopstudios. All rights reserved.
+        <div class="footer-links">
+          <div class="footer-links__socials">
+            <img src="images/icon-facebook.svg" alt="facebook" />
+            <img src="images/icon-instagram.svg" alt="instagram" />
+            <img src="images/icon-pinterest.svg" alt="pinterest" />
+            <img src="images/icon-twitter.svg" alt="twitter" />
+          </div>
+          <div class="footer-links__copyright">
+            @ 2021 Loopstudios. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
+    <script>
+      const cardTitles = [
+        'Deep earth',
+        'Night arcade',
+        'Soccer team VR',
+        'The grid',
+        'From up above VR',
+        'Pocket borealis',
+        'The curiosity',
+        'Make it fisheye',
+      ];
+
+      console.log('hallo');
+      const gallery = document.getElementById('galleryContent');
+      console.log('gallery (content)', gallery);
+
+      cardTitles.forEach((text) => {
+        console.log('test', text);
+        const card = document.createElement('div');
+        card.className = 'gallery__card';
+
+        const cardTitle = document.createElement('div');
+        cardTitle.className = 'gallery__card-title';
+        cardTitle.textContent = text;
+        const className = text.replaceAll(' ', '-').toLowerCase();
+        console.log('---> ', className);
+        cardTitle.classList.add(className);
+
+        card.appendChild(cardTitle);
+        gallery.appendChild(card);
+      });
+    </script>
   </body>
-  <script>
-    const cardTitles = [
-      'Deep earth',
-      'Night arcade',
-      'Soccer team VR',
-      'The grid',
-      'From up above VR',
-      'Pocket borealis',
-      'The curiosity',
-      'Make it fisheye',
-    ];
-
-    const gallery = document.getElementById('gallery__content');
-
-    cardTitles.forEach((text) => {
-      const card = document.createElement('div');
-      card.className = 'gallery__card';
-
-      const cardTitle = document.createElement('div');
-      cardTitle.className = 'gallery__card-title';
-      cardTitle.textContent = text;
-
-      card.appendChild(cardTitle);
-      gallery.appendChild(card);
-    });
-  </script>
 </html>

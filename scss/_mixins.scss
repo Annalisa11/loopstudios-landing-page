@@ -1,0 +1,27 @@
+@import 'variables';
+
+@mixin breakpoint($size) {
+  $breakpoint: map-get($breakpoints, $size);
+  @if $breakpoint {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint: #{$size}";
+  }
+}
+
+@mixin bg-img($imageName) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-image: url('../images/mobile/#{$imageName}.jpg'); // Default for mobile
+
+  @include breakpoint('medium') {
+    background-image: url('../images/desktop/#{$imageName}.jpg');
+  }
+
+  @include breakpoint('large') {
+    background-image: url('../images/desktop/#{$imageName}.jpg');
+  }
+}

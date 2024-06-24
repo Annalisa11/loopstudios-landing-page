@@ -1,0 +1,27 @@
+:root {
+  /* Layout */
+  --body-width: 80%;
+
+  /* Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-dark-gray: hsl(0, 0%, 55%);
+  --color-very-dark-gray: hsl(0, 0%, 41%);
+
+  /* Typography */
+  --font-size-body: 15px;
+
+  /* Font Families */
+  --font-alata: 'Alata', sans-serif;
+  --font-josefin: 'Josefin Sans', sans-serif;
+
+  /* Font Weights */
+  --font-weight-alata: 400;
+  --font-weight-josefin-sans: 300;
+  --img-name: ''; // Custom property to hold the image name
+}
+
+$breakpoints: (
+  'medium': 413px,
+  'large': 1440px,
+);
