@@ -22,6 +22,11 @@
       <div class="header__container">
         <div class="header__nav-container">
           <div class="header__company-title">loopstudios</div>
+          <img
+            src="images/icon-hamburger.svg"
+            alt="menu"
+            class="header__burger"
+          />
           <nav>
             <ul>
               <li class="nav__menu-item">About</li>
@@ -56,10 +61,8 @@
       </section>
 
       <section class="gallery">
-        <div class="gallery__header">
-          <h2>Our creations</h2>
-          <button>See all</button>
-        </div>
+        <h2>Our creations</h2>
+        <button>See all</button>
         <div id="galleryContent" class="gallery__content"></div>
       </section>
     </main>
@@ -114,11 +117,14 @@
 
         const cardTitle = document.createElement('div');
         cardTitle.className = 'gallery__card-title';
-        cardTitle.textContent = text;
+        const span = document.createElement('span');
+        span.classList.add('gallery__card-title--to-front');
+        span.textContent = text;
         const className = text.replaceAll(' ', '-').toLowerCase();
         console.log('---> ', className);
         cardTitle.classList.add(className);
 
+        cardTitle.appendChild(span);
         card.appendChild(cardTitle);
         gallery.appendChild(card);
       });

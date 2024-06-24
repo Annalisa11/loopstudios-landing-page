@@ -25,3 +25,19 @@
     background-image: url('../images/desktop/#{$imageName}.jpg');
   }
 }
+
+@mixin visibility-toggle($breakpoint, $displayType, $hiddenFirst) {
+  @if ($hiddenFirst) {
+    display: none;
+  } @else {
+    display: $displayType;
+  }
+
+  @include breakpoint($breakpoint) {
+    @if ($hiddenFirst) {
+      display: $displayType;
+    } @else {
+      display: none;
+    }
+  }
+}
